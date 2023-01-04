@@ -5,12 +5,19 @@ import ItemCount from "./components/ItemCount";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
+
+  const onAddCart = (quantity) => {
+
+    console.log(`Compraste ${quantity} productos`)
+      
+  }
+
   return (
 <> 
 
     <NavBar /> 
     <ItemListContainer greeting='Hola, soy una prop de ItemListContainer' /> 
-    <ItemCount stock='5' initial='1'/>
+    <ItemCount stock={5} initial={1} onAddCart={onAddCart}/>
     
 </>
   );

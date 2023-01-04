@@ -1,11 +1,9 @@
 import React from 'react'
 import { useState } from 'react'
 
-const ItemCount = (props) => {
+const ItemCount = (stock, initial, onAddCart) => {
 
-let {stock, initial} = props
-
-const [counter,setCounter] = useState(parseInt(initial))
+const [counter,setCounter] = useState(initial)
 
 let increase = () => {
 
@@ -21,39 +19,24 @@ console.log(setCounter)
 
 }
 
-if(counter > 5) {
 
-  alert('No hay mas stock disponible')
-
-
-}
-
-const [disabled,setDisabled] = useState(true)
-
-if(disabled == true) {
-
-  setDisabled(decrease())
-
-}
-
-
-
-
-
-
-
-
-  return (
+return (
     <>
 
+<div>
 <button onClick={increase}>+</button>
 <span>{counter}</span>
-<button disabled={true} onClick={decrease}>-</button>
-<button>Agregar al carrito</button>
+<button disabled={counter === initial} onClick={decrease}>-</button>
+</div>
+
+<button disabled={counter === 0 || stock === 0} onClick={() => onAddCart(counter)} >
+Agregar al carrito
+</button>
+
 
 
     </>
   )
-}
+  }
 
 export default ItemCount;
