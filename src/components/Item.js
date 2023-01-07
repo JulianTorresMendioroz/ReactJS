@@ -1,34 +1,17 @@
-import React, { useEffect, useState } from 'react'
-import productsSrc from '../products.json'
+import react from 'react'
 
-
-const Item = () => {
-
-
-  const [products, setProducts] = useState([])
-  const [load,setLoad] = useState(false)
-    
-useEffect(() => {
-
-  fetch(productsSrc)
-  console.log(productsSrc)
-
-  setTimeout(() => {
-
-    setLoad(true)
-
-  },2000)
-
-},[])
-
+const Item = (product) => {
 
   return (
     <>
-  
-    {load ? 'Productos Cargados' : 'Cargando...'}
-  
+    <>
+      <img src={product.img}/>
+      <h2>{product.name}</h2>
+      <p>{product.price}</p>
+    </>
     </>
   )
 }
 
 export default Item
+

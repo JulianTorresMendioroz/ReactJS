@@ -17,7 +17,7 @@ function App() {
 <> 
 
     <NavBar /> 
-    <ItemListContainer greeting='Hola, soy una prop de ItemListContainer' /> 
+    <ItemListContainer /> 
     <Item />
      {/* <ItemCount stock={5} initial={0} onAddCart={onAddCart}/>  */}
     

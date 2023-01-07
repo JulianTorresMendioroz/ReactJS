@@ -1,13 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import productsSrc from '../products.json'
+import ItemList from './ItemList';
 
-function ItemListContainer (props) {
+function ItemListContainer () {
 
-    const {greeting} = props
+    
+    const [products, setProducts] = useState([])
+    
+    useEffect(() => {
+  
+      fetch(productsSrc)
+  
+      setTimeout(() => {
+        setProducts(productsSrc)
+        
+  
+      },2000)
+  
+    },[])
+
+
 
   return (
     <>
     
-    <h1>{greeting}</h1>
+    {products.length == 0 ? <h1>Cargando productos</h1> : <ItemList products={products}/>}
     
     </>
   )
