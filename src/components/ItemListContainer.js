@@ -1,21 +1,26 @@
 import React, { useEffect, useState } from 'react';
-import productsSrc from '../products.json'
 import ItemList from './ItemList';
 
 function ItemListContainer () {
 
     
     const [products, setProducts] = useState([])
+
+    console.log(products)
     
     useEffect(() => {
   
-      fetch(productsSrc)
+     const prods = fetch('/products.json')
+
+     prods
+     .then((res) => console.log(res.json()))
+     .catch((err) => console.log(err))
+     .finally(() => {console.log('finalizado')})
   
       setTimeout(() => {
-        setProducts(productsSrc)
+        setProducts(prods)
         
-        console.log(setProducts)
-  
+        console.log(prods)
       },2000)
   
     },[])
