@@ -14,6 +14,7 @@ function ItemListContainer () {
       setTimeout(() => {
         setProducts(productsSrc)
         
+        console.log(setProducts)
   
       },2000)
   
