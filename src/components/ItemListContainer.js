@@ -24,7 +24,8 @@ function ItemListContainer () {
   return (
     <>
     
-    {products.length == 0 ? <h1>Cargando productos</h1> : <ItemList products={products}/>}
+    {products.length === 0 ? <h1>Cargando productos</h1> : <ItemList products={products}/>}
+
     
     </>
   )
