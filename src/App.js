@@ -1,9 +1,10 @@
 import React from "react";
 import NavBar from "./components/NavBar";
 import ItemListContainer from "./components/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer";
 import ItemCount from "./components/ItemCount";
-import Item from './components/Item'
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
 
@@ -18,7 +19,8 @@ function App() {
 
     <NavBar /> 
     <ItemListContainer /> 
-    <Item />
+    <ItemDetailContainer />
+
      {/* <ItemCount stock={5} initial={0} onAddCart={onAddCart}/>  */}
     
 </>

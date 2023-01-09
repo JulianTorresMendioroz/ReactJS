@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import ItemList from './ItemList';
-import '../components/ItemList.css'
+import Item from './Item';
 
-function ItemListContainer () {
+
+function ItemDetailContainer () {
 
     
     const [load,setLoad] = useState(false)
@@ -20,14 +20,18 @@ function ItemListContainer () {
           .then((data) => setProducts(data),
 
           setTimeout(() => {
+
             setLoad(true)
+            
           },2000))  
 
           .catch((err) => console.log(err))
-          
+
           .finally(() => {
+
               console.log("Promise completed");
           });
+
   }, []);
 
 
@@ -35,12 +39,8 @@ function ItemListContainer () {
   return (
     <>
     
-    {load ?
-    
-     <div className='cardProds'>
-    <ItemList products={products}/>
-     </div>
-
+    {load ? <div className='cardProds'>
+    <Item  product={products}/> </div>
     :  <h1>Cargando productos</h1> }
 
     
@@ -48,4 +48,4 @@ function ItemListContainer () {
   )
 }
 
-export default ItemListContainer;
+export default ItemDetailContainer;

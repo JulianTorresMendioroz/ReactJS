@@ -1,8 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-
-const Item = ({product}) => {
+const ItemDetail = ({product}) => {
 
   console.log('ITEM',product)
 
@@ -22,5 +21,4 @@ const Item = ({product}) => {
   )
 }
 
-export default Item
-
+export default ItemDetail
