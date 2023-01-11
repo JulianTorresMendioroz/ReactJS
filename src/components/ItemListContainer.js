@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ItemList from './ItemList';
 import '../components/ItemList.css'
+import '../components/ItemListContainer.css'
 
 function ItemListContainer () {
 
@@ -35,6 +36,11 @@ function ItemListContainer () {
   return (
     <>
     
+    <div className='divInfo'>
+    <h1>TAKI CAP HOODIES</h1>
+    <h3>Los mejores buzos para vos</h3>
+    </div>
+
     {load ?
     
      <div className='cardProds'>

@@ -1,21 +1,33 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-const ItemDetail = ({product}) => {
+const ItemDetail = ({products}) => {
 
-  console.log('ITEM',product)
+  console.log('ITEM',products)
 
   return (
     <>
+
+
     <div>
-     <Card style={{ width: '15rem' }}>
-      <Card.Img variant="top" src={product.img} />
+
+    {products.map((prod)=>{
+    return(
+      <Card style={{ width: '15rem' }}>
+      <Card.Img variant="top" src={prod.img} />
       <Card.Body>
-        <Card.Title>{product.name}</Card.Title>
-        <Card.Text>{product.description}</Card.Text>
+        <Card.Title>{prod.name}</Card.Title>
+        <Card.Title>{prod.price}</Card.Title>
+        <Card.Text>{prod.description}</Card.Text>
         <Button variant="primary">Agregar al carrito</Button>
       </Card.Body>
     </Card>
+        // <ItemList products={prod} key={prod.id}/> 
+        
+    )
+})}
+
+   
     </div>
     </>
   )
