@@ -28,7 +28,7 @@ return (
 <button disabled={counter === stock} onClick={increase}>+</button>
 </div>
 
-<button disabled={counter === 0 || stock === 0} onClick={() => onAddCart(counter)} >
+<button disabled={counter === 1 || stock === 1} onClick={() => onAddCart(counter)} >
 Agregar al carrito
 </button>
 

@@ -10,13 +10,13 @@ function ItemListContainer () {
     const [load,setLoad] = useState(false)
     const [products, setProducts] = useState([])
   
-    const {id} = useParams()
+    const {categoryId} = useParams()
 
     console.log(products)
     
     useEffect(() => {
 
-      const URL = id ? `https://fakestoreapi.com/products/category/${id})` : 'https://fakestoreapi.com/products/'
+      const URL = categoryId ? `https://fakestoreapi.com/products/category/${categoryId}` : 'https://fakestoreapi.com/products/'
 
       const prods = fetch(URL)
 
@@ -34,7 +34,7 @@ function ItemListContainer () {
           .finally(() => {
               console.log("Promise completed");
           });
-  }, [id]);
+  }, [categoryId]);
 
 
 

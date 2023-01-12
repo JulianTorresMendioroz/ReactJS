@@ -16,6 +16,7 @@ const ItemDetail = ({product}) => {
         <Card.Title>{product.price}</Card.Title>
         <Card.Text>{product.description}</Card.Text>
         <Button variant="primary">Agregar al carrito</Button>
+
       </Card.Body>
     </Card>
 

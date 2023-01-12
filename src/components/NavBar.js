@@ -21,6 +21,10 @@ function NavBar() {
             <Nav.Link className="weNav" as='span'><Link to='category/electronics'>Electronics</Link> </Nav.Link> 
             
             <Nav.Link className="weNav" as='span'><Link to='category/jewelery'>Jewelery</Link> </Nav.Link> 
+
+            <Nav.Link className="weNav" as='span'><Link to="category/men's clothing">Men's Clothing</Link> </Nav.Link> 
+
+            <Nav.Link className="weNav" as='span'><Link to="category/women's clothing">Women's Clothing</Link> </Nav.Link> 
            
             <Link to='/cart'>
             < CartWidget />
