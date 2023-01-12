@@ -15,14 +15,13 @@ function NavBar() {
           </Link>
           <Nav className="navbar-nav ml auto">
             <Link to='/'>
-            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link as='span'>Home</Nav.Link>
             </Link>
-            <Link to='/contact'>
-            <Nav.Link href="#contact">Contacto</Nav.Link>
-            </Link>
-            <Link to='/us'>
-            <Nav.Link className="weNav" href="#we">Nosotros</Nav.Link> 
-            </Link>
+
+            <Nav.Link className="weNav" as='span'><Link to='category/electronics'>Electronics</Link> </Nav.Link> 
+            
+            <Nav.Link className="weNav" as='span'><Link to='category/jewelery'>Jewelery</Link> </Nav.Link> 
+           
             <Link to='/cart'>
             < CartWidget />
             </Link>

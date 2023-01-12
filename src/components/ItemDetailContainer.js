@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import ItemDetail from './ItemDetail';
 import '../components/ItemDetail.css'
-
 
 function ItemDetailContainer () {
 
     const [load,setLoad] = useState(false)
-    const [products, setProducts] = useState([])
+    const [product, setProduct] = useState({})
   
-    console.log(products)
+    const {id} = useParams()
     
     useEffect(() => {
 
-      const prods = fetch("/products.json");
+      const prods = fetch(`https://fakestoreapi.com/products/${id}`);
   
       prods
           .then((res) => res.json())    
-          .then((data) => setProducts(data),
+          .then((data) => setProduct(data),
             setTimeout(() => {
                 setLoad(true)
             },2000))    
@@ -27,7 +27,7 @@ function ItemDetailContainer () {
             
           });
 
-  }, []);
+  }, [id]);
 
 
 
@@ -35,7 +35,7 @@ function ItemDetailContainer () {
     <>
     
     {load ? <div className='cardProds'>
-    <ItemDetail  products={products}/> </div>
+    <ItemDetail  product={product}/> </div>
     :  <h1>Cargando productos</h1> }
     </>
   )

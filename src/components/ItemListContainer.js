@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ItemList from './ItemList';
 import '../components/ItemList.css'
 import '../components/ItemListContainer.css'
+import { useParams } from 'react-router-dom';
 
 function ItemListContainer () {
 
@@ -9,11 +10,15 @@ function ItemListContainer () {
     const [load,setLoad] = useState(false)
     const [products, setProducts] = useState([])
   
+    const {id} = useParams()
 
     console.log(products)
     
     useEffect(() => {
-      const prods = fetch("/products.json");
+
+      const URL = id ? `https://fakestoreapi.com/products/category/${id})` : 'https://fakestoreapi.com/products/'
+
+      const prods = fetch(URL)
 
       prods
           .then((res) => res.json())
@@ -29,7 +34,7 @@ function ItemListContainer () {
           .finally(() => {
               console.log("Promise completed");
           });
-  }, []);
+  }, [id]);
 
 
 

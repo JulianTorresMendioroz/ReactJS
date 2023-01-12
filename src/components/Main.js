@@ -1,9 +1,10 @@
 import React from 'react'
 import {Routes, Route} from 'react-router-dom'
 import ItemListContainer from "../components/ItemListContainer";
-import ItemDetail from './ItemDetail';
+import ItemDetailCotainer from '../components/ItemDetailContainer'
 import { Contact } from "../components/Contact";
 import { Us } from '../components/Us';
+import { Cart } from './Cart';
 
 
 const Main = () => {
@@ -12,10 +13,10 @@ const Main = () => {
     <div>
         <main>
         <Routes>
-            <Route path="/" element={<ItemListContainer/>}/>
-            <Route path="/contact" element={<Contact/>}/>
-            <Route path="/us" element={< Us/>}/>
-            <Route path='/products/:id' element={< ItemDetail/>}/>
+            <Route path="/" element={< ItemListContainer />}/>
+            <Route path='/item/:id' element={< ItemDetailCotainer />}/>
+            <Route path="/category/:categoryId" element={< ItemListContainer />}/>
+            <Route path="/cart" element={< Cart/>}/>
         </Routes>
         </main>
     </div>
