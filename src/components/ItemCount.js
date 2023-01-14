@@ -1,9 +1,12 @@
 import React from 'react'
+import Button from 'react-bootstrap/Button';
 import { useState } from 'react'
 
 const ItemCount = ({stock, initial, onAddCart}) => {
 
 const [counter,setCounter] = useState(initial)
+
+
 
 let increase = () => {
 
@@ -23,15 +26,14 @@ return (
     <>
 
 <div>
-<button disabled={counter === initial} onClick={decrease}>-</button>
+<Button variant="dark" disabled={counter === initial} onClick={decrease}>-</Button>
 <span>{counter}</span>
-<button disabled={counter === stock} onClick={increase}>+</button>
+<Button variant="dark" disabled={counter === stock} onClick={increase}>+</Button>
 </div>
 
-<button disabled={counter === 1 || stock === 1} onClick={() => onAddCart(counter)} >
+<Button variant="success"disabled={counter === 1 || stock === 1} onClick={() => onAddCart(counter)} >
 Agregar al carrito
-</button>
-
+</Button>
 
 
     </>

@@ -25,9 +25,7 @@ function ItemListContainer () {
 
           .then((data) => setProducts(data),
 
-          setTimeout(() => {
-            setLoad(true)
-          },2000))  
+          setLoad(true))  
 
           .catch((err) => console.log(err))
           
@@ -42,8 +40,8 @@ function ItemListContainer () {
     <>
     
     <div className='divInfo'>
-    <h1>TAKI CAP HOODIES</h1>
-    <h3>Los mejores buzos para vos</h3>
+    <h1>Your shooping online</h1>
+    <h3>The best's product for you</h3>
     </div>
 
     {load ?

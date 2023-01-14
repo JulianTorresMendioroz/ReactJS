@@ -17,9 +17,7 @@ function ItemDetailContainer () {
       prods
           .then((res) => res.json())    
           .then((data) => setProduct(data),
-            setTimeout(() => {
-                setLoad(true)
-            },2000))    
+              setLoad(true))    
             .catch((err) => console.log(err))
             .finally(() => {
 
@@ -35,7 +33,7 @@ function ItemDetailContainer () {
     <>
     
     {load ? <div className='cardProds'>
-    <ItemDetail  product={product}/> </div>
+    <ItemDetail product={product}/> </div>
     :  <h1>Cargando productos</h1> }
     </>
   )
