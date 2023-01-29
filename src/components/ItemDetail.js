@@ -1,17 +1,21 @@
 import Card from 'react-bootstrap/Card';
 import ItemCount from './ItemCount';
+import { useCart } from './GenericProvider';
 
 const ItemDetail = ({product}) => {
 
-  console.log('ITEM',product)
+  const  { addToCart } = useCart()
 
   const onAddCart = (quantity) => {
 
-    alert(`Compraste ${quantity} productos`)
+    addToCart(product, quantity)
+   console.log(addToCart);
+  
+  
       
   }
   
-  cont
+
   return (
     <>
 

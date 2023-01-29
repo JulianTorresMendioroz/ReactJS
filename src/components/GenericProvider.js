@@ -14,46 +14,29 @@ export const useCart = () => {
 const GenericProvider = ({children}) => {
 
     const [cart, setCart] = useState([])
-    const [totalProducts, setTotalProducts] = useState(0)
 
-    const addProduct = (product, quantity) => {
+   const isInCart =  (id) => {
 
-     
+    cart.find((el) => el.id === id)
 
+   }
 
+   const addToCart = (item, quantity) => {
 
-
-
-
-    }
-
-    const deleteProduct = (id) => {
-
-        let indexProd = cart.findIndex((prod) => prod.id === id);
-
-        cart.splice(indexProd, 1);
-
-
-
-        }
-
-    }
-
-    const emptyCart = () => {
-
-        setCart([])
+    if(isInCart(item.id)) {
+        setCart(
+           cart.map((prod) => {
+            return prod.id === item.id
+            ? {...prod, count: prod.quantity += quantity}
+            : prod
+           }) 
+        );
+    }else{
+        setCart([...cart, {...item, quantity}])
+    }}
+ 
 
 
-    }
-
-    const onCart = (id) => {
-        
-        const findId = cart.find((el) => el === id)
-        if(findId){
-
-            
-
-    }
 
 
 
@@ -61,10 +44,10 @@ const GenericProvider = ({children}) => {
     const contextValue = {
 
         cart: cart,
-        totalProducts: totalProducts,
         setCart: setCart,
-        setTotalProducts: setTotalProducts
-    
+        addToCart: addToCart,
+        isInCart: isInCart
+
     }
 
   return (
@@ -72,8 +55,6 @@ const GenericProvider = ({children}) => {
     <Provider value={contextValue}>
         {children}
         </Provider>
-
-
     </>
   )
 }
