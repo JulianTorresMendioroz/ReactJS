@@ -11,7 +11,7 @@ const ItemDetail = ({product}) => {
       
   }
   
-
+  cont
   return (
     <>
 
@@ -22,7 +22,7 @@ const ItemDetail = ({product}) => {
         <Card.Title>{product.title}</Card.Title>
         <Card.Title>{product.price}</Card.Title>
         <Card.Text>{product.description}</Card.Text>
-        <ItemCount stock={5} initial={1} onAddCart={onAddCart} />
+        <ItemCount stock={product.stock} initial={1} onAddCart={onAddCart} />
 
       </Card.Body>
     </Card>
