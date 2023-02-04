@@ -35,18 +35,41 @@ const GenericProvider = ({children}) => {
         setCart([...cart, {...item, quantity}])
     }}
  
+    const emptyCart = () => {
+    setCart([])
 
+    }
 
+    const deleteProduct = (prodId) => {
 
+        let cartNew = cart.filter((prodOnCart) =>(prodOnCart.id !== prodId))
+        setCart(cartNew)
 
+    }
 
+    const totalPrice = () => {
+
+        return cart.reduce((prev, acc) => prev + acc.quantity * acc.price, 0)
+    }
+
+    const totalItem = () => {
+        let total = 0;
+        cart.forEach(itemInCart => {
+            total = total + itemInCart.quantity
+        })
+        return total;
+    }
 
     const contextValue = {
 
         cart: cart,
         setCart: setCart,
         addToCart: addToCart,
-        isInCart: isInCart
+        isInCart: isInCart,
+        emptyCart: emptyCart,
+        deleteProduct: deleteProduct,
+        totalPrice: totalPrice,
+        totalItem: totalItem
 
     }
 

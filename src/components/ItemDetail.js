@@ -7,14 +7,9 @@ const ItemDetail = ({product}) => {
   const  { addToCart } = useCart()
 
   const onAddCart = (quantity) => {
-
-    addToCart(product, quantity)
-   console.log(addToCart);
-  
-  
-      
-  }
-  
+    addToCart(product, quantity);
+    console.log(product, quantity);
+};
 
   return (
     <>
@@ -27,6 +22,8 @@ const ItemDetail = ({product}) => {
         <Card.Title>{product.price}</Card.Title>
         <Card.Text>{product.description}</Card.Text>
         <ItemCount stock={product.stock} initial={1} onAddCart={onAddCart} />
+       
+        
 
       </Card.Body>
     </Card>

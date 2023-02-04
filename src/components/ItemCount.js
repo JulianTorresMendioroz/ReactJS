@@ -6,8 +6,6 @@ const ItemCount = ({stock, initial, onAddCart}) => {
 
 const [counter,setCounter] = useState(initial)
 
-
-
 let increase = () => {
 
  setCounter(counter + 1) 
@@ -31,7 +29,7 @@ return (
 <Button variant="dark" disabled={counter === stock} onClick={increase}>+</Button>
 </div>
 
-<Button variant="success"disabled={counter === 1 || stock === 1} onClick={() => onAddCart(counter)} >
+<Button variant="success"disabled={counter < 1 || stock < 1} onClick={() => onAddCart(counter)} >
 Agregar al carrito
 </Button>
 

@@ -18,6 +18,7 @@ function ItemListContainer () {
 
       const URL = categoryId ? `https://fakestoreapi.com/products/category/${categoryId}` : 'https://fakestoreapi.com/products/'
 
+
       const prods = fetch(URL)
 
       prods
